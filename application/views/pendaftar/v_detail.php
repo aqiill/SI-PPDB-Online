@@ -48,11 +48,6 @@ if ($this->session->userdata('level_user') !== "admin") {
                                                 <td><b><?php echo $detail->nik ?></b></td>
                                             </tr>
                                             <tr>
-                                                <td width="200px">Email</td>
-                                                <td width="20px">:</td>
-                                                <td><b><?php echo $detail->email ?></b></td>
-                                            </tr>
-                                            <tr>
                                                 <td width="200px">Asal Sekolah</td>
                                                 <td width="20px">:</td>
                                                 <td><b><?php echo $detail->sekolah ?></b></td>
@@ -96,6 +91,25 @@ if ($this->session->userdata('level_user') !== "admin") {
                                                 <td width="200px">Alamat Orang Tua/Wali</td>
                                                 <td width="20px">:</td>
                                                 <td><b><?php echo $detail->alamat_wali ?></b></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <table>
+                                            <tr>
+                                                <td width="200px">Email</td>
+                                                <td width="20px">:</td>
+                                                <td><b><?php echo $detail->email ?></b></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="200px">Password</td>
+                                                <td width="20px">:</td>
+                                                <td><b>Terenkripsi</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="200px">Level</td>
+                                                <td width="20px">:</td>
+                                                <td><b><?php echo $detail->level_user ?></b></td>
                                             </tr>
                                         </table>
                                     </div>
