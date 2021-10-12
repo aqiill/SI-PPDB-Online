@@ -29,6 +29,7 @@ class Pendaftar extends CI_Controller
 
     public function status($id_user)
     {
+        if (!isset($id_user)) show_404();
         $siswa = $this->m_user->detail($id_user);
 
         $valid = $this->form_validation;
@@ -61,9 +62,9 @@ class Pendaftar extends CI_Controller
         $this->load->view('layout/wrapper', $data, FALSE);
     }
 
-    public function detail($id_user)
+    public function detail($id_user=null)
     {
-
+        if (!isset($id_user)) show_404();
         $detail = $this->m_user->detail($id_user);
         $data = array(
             'title'      => $detail->nama_user,
@@ -71,5 +72,15 @@ class Pendaftar extends CI_Controller
             'isi'        => 'pendaftar/v_detail'
         );
         $this->load->view('layout/wrapper', $data, FALSE);
+    }
+
+    public function delete($id_user)
+    {
+        if (!isset($id_user)) show_404();
+
+        $this->m_user->delete($id_user);
+
+        $this->session->set_flashdata('sukses', ' Data berhasil dihapus');
+        redirect(base_url('pendaftar'), 'refresh');
     }
 }

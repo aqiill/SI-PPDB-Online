@@ -79,4 +79,9 @@ class M_user extends CI_Model
     {
         $this->db->update('tb_user', $data,array('id_user' => $id_user));
     }
+
+    public function delete($id_user)
+    {
+        $this->db->delete('tb_user',array('id_user' => $id_user));
+    }
 }

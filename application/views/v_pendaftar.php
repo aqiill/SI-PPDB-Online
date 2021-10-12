@@ -49,6 +49,9 @@
                                     <td><?php if($value->status_user=="ready"){echo "menunggu";}else{ echo $value->status_user; } ?></td>
                                     <td><?php echo $value->nilai ?></td>
                                     <td>
+                                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value->id_user ?>">
+                                              <i class="fa fa-edit"></i> Status
+                                            </button>
                                         <a href="<?php echo base_url('pendaftar/detail/' . $value->id_user) ?>"
                                             class="btn btn-primary btn-sm">
                                             <i class="fa fa-user"></i> Detail</a>
@@ -56,9 +59,9 @@
                                         <!-- <a href="<?php echo base_url('pendaftar/status/' . $value->id_user) ?>"
                                             class="btn btn-success btn-sm">
                                             <i class="fa fa-edit"></i> Status</a> -->
-                                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value->id_user ?>">
-                                              <i class="fa fa-edit"></i> Status
-                                            </button>
+                                        <a href="<?php echo base_url('pendaftar/delete/' . $value->id_user) ?>"
+                                            class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
 
